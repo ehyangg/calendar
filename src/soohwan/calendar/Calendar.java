@@ -12,14 +12,21 @@ public class Calendar {
 		System.out.println("22 23 24 25 26 27 28");
 		
 		//숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		int[] thirtymonth = new int[30];
-		int[] thirtyonemonth = new int[31];
-		int[] elsemonth = new int[28];
+		String[] thirtymonth = {"4, 6, 9, 11"};
+		String[] thirtyonemonth = {"1, 3, 5, 7, 8, 10, 12"};
+		String elsemonth = "2";
+		
 		System.out.println("원하는 달의 수를 입력하시면 최대 일수를 알려드립니다.");
 		Scanner scanner = new Scanner(System.in);
-		boolean num;
-		if(num = 1 || 3 || 5 || 7 || 10 || 12) {
-		 System.out.println(thirtymonth.length);
-		 }
+		String num = scanner.next();
+		System.out.println("사용자가 입력한 값은" + num +"입니다.");
+		
+		if(thirtymonth.equals(num)) {
+			System.out.println("30");
+		} else if(thirtyonemonth.equals(num)) {
+			System.out.println("31");
+		} else if(elsemonth.equals(num)) {
+			System.out.println("28");
+		}
 	}
 }
