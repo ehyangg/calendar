@@ -37,12 +37,25 @@ public class Calendar {
 		}
 		*/
 	
-		//배열을 활용하여 해결
+		//반복문과 조건문을 활용하여 반복적으로 응답하기
+		//while 과 for의 차이 ... while은 구체적 반복 횟수가 안 정해져 있을 때 사용하면 좋음
 		Calendar cal = new Calendar();
-		System.out.println("원하는 달을 입력하시면 최대 일 수를 알려드립니다.");
+		String PROMPT = "cal> ";
 		Scanner scanner = new Scanner(System.in);
-		int month = scanner.nextInt();
-		System.out.printf("%d월의 최대 일 수는 %d입니다.", month, cal.getMaxDaysOfMonth(month));
+		while(true) {
+			System.out.println("원하는 달을 입력하시면 최대 일 수를 알려드립니다.");
+			System.out.print(PROMPT);
+			int month = scanner.nextInt();
+			
+			if(month == -1) {
+				break;
+			} else if(month > 12) {
+				continue;
+			}
+			System.out.printf("%d월의 최대 일 수는 %d일 입니다.\n", month, cal.getMaxDaysOfMonth(month));
+		}
+		
+		System.out.println("The End");
 		scanner.close();
 	}
 }
