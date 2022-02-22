@@ -3,7 +3,11 @@ package soohwan.calendar;
 import java.util.Scanner;
 
 public class Calendar {
+	private static int[] MAX_DAYS = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS[month - 1];
+	}
 	public static void main(String[] args) {
 //		System.out.println("일  월  화  수 목  금 토");
 //		System.out.println("--------------------");
@@ -34,11 +38,11 @@ public class Calendar {
 		*/
 	
 		//배열을 활용하여 해결
-		int[] MaxMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+		Calendar cal = new Calendar();
 		System.out.println("원하는 달을 입력하시면 최대 일 수를 알려드립니다.");
 		Scanner scanner = new Scanner(System.in);
 		int month = scanner.nextInt();
-		System.out.printf("%d월의 최대 일 수는 %d입니다.", month, MaxMonth[month - 1]);
+		System.out.printf("%d월의 최대 일 수는 %d입니다.", month, cal.getMaxDaysOfMonth(month));
 		scanner.close();
 	}
 }
