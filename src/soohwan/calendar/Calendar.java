@@ -3,6 +3,7 @@ package soohwan.calendar;
 import java.util.Scanner;
 
 public class Calendar {
+	
 	public static void main(String[] args) {
 //		System.out.println("일  월  화  수 목  금 토");
 //		System.out.println("--------------------");
@@ -38,5 +39,6 @@ public class Calendar {
 		Scanner scanner = new Scanner(System.in);
 		int month = scanner.nextInt();
 		System.out.printf("%d월의 최대 일 수는 %d입니다.", month, MaxMonth[month - 1]);
+		scanner.close();
 	}
 }
